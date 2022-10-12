@@ -9,8 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.mecitdeniz.tdkdictionary.R
 import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toConfusion
 import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toMistake
 import com.mecitdeniz.tdkdictionary.feature_dictionary.presentation.header.Header
@@ -55,7 +57,7 @@ fun HomeScreen(
                 item {
                     state.content?.words?.forEach { word ->
                         ContentItem(
-                            headerTitle = "Bir Kelime",
+                            headerTitle = stringResource(R.string.a_word),
                             contentTitle = word.word,
                             contentDescription = word.meaning
                         )
@@ -63,7 +65,7 @@ fun HomeScreen(
 
                     state.content?.proverbs?.forEach { proverb ->
                         ContentItem(
-                            headerTitle = "Bir Atasözü-Deyim",
+                            headerTitle = stringResource(R.string.a_proverb),
                             contentTitle = proverb.proverb,
                             contentDescription = proverb.meaning
                         )
@@ -71,7 +73,7 @@ fun HomeScreen(
 
                     state.content?.rules?.forEach { rule ->
                         ContentItem(
-                            headerTitle = "Bir Kural",
+                            headerTitle = stringResource(R.string.a_rule),
                             contentTitle = rule.name,
                             url = rule.url
                         )
@@ -79,14 +81,14 @@ fun HomeScreen(
 
                     state.content?.confusions?.let {
                         ContentItem(
-                            headerTitle = "Sıkça Karıştırılan Kelimeler",
+                            headerTitle = stringResource(R.string.frequently_confused_words),
                             confusions = state.content.confusions.map {
                                 it.toConfusion()
                             })
                     }
                     
                     state.content?.syyd?.let { mistakes ->
-                        ContentItem(headerTitle = "Sıkça Yapılan Yanlışlara Doğrular", mistakes = mistakes.map { it.toMistake() } )
+                        ContentItem(headerTitle = stringResource(R.string.correction_to_common_misstakes), mistakes = mistakes.map { it.toMistake() } )
                     }
 
                 }

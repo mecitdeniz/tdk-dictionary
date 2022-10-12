@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.mecitdeniz.tdkdictionary.R
 
 @Composable
 fun Search(
@@ -26,7 +28,8 @@ fun Search(
                 .fillMaxWidth()
                 .padding(16.dp),
             shape = RoundedCornerShape(14.dp),
-            value = "Sözlükte Ara", onValueChange = {},
+            value = stringResource(R.string.search_in_dictionary),
+            onValueChange = {},
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.White,
                 focusedIndicatorColor = Color.Transparent,

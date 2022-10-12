@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TDK Sözlük</string>
+    <string name="a_word">Bir Kelime</string>
+    <string name="a_proverb">Bir Atasözü-Deyim</string>
+    <string name="a_rule">Bir Kural</string>
+    <string name="frequently_confused_words">Sıkça Karıştırılan Kelimeler</string>
+    <string name="correction_to_common_misstakes">Sıkça Yapılan Yanlışlara Doğrular</string>
+    <string name="search_in_dictionary">Sözlükte Ara</string>
 </resources>
