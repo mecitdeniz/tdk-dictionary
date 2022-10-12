@@ -11,6 +11,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toConfusion
+import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toMistake
 import com.mecitdeniz.tdkdictionary.feature_dictionary.presentation.home.HomeViewModel
 
 @Composable
@@ -18,6 +20,7 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel()
 ) {
     val state = viewModel.state.value
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -70,10 +73,21 @@ fun HomeScreen(
                             url = rule.url
                         )
                     }
+
+                    state.content?.confusions?.let {
+                        ContentItem(
+                            headerTitle = "Sıkça Karıştırılan Kelimeler",
+                            confusions = state.content.confusions.map {
+                                it.toConfusion()
+                            })
+                    }
+                    
+                    state.content?.syyd?.let { mistakes ->
+                        ContentItem(headerTitle = "Sıkça Yapılan Yanlışlara Doğrular", mistakes = mistakes.map { it.toMistake() } )
+                    }
+
                 }
             }
         }
-
     }
-
 }

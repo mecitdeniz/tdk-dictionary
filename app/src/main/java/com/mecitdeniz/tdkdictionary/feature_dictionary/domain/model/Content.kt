@@ -8,6 +8,6 @@ data class Content(
     val words: List<WordDto>,
     val rules: List<RuleDto>,
     val counters: List<CounterDto>,
-    val syyd: List<SyydDto>,
+    val syyd: List<MistakeDto>,
     val foreign: ForeignDto
 )

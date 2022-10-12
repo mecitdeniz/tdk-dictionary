@@ -14,7 +14,7 @@ data class HomeContentDto(
     val rules: List<RuleDto>,
     @SerializedName("sayac")
     val counters: List<CounterDto>,
-    val syyd: List<SyydDto>,
+    val syyd: List<MistakeDto>,
     @SerializedName("yabanci")
     val foreign: ForeignDto
 )
