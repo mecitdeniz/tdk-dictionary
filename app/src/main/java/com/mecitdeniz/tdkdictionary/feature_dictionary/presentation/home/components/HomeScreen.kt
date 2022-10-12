@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toConfusion
 import com.mecitdeniz.tdkdictionary.feature_dictionary.data.remote.dto.content.toMistake
+import com.mecitdeniz.tdkdictionary.feature_dictionary.presentation.header.Header
 import com.mecitdeniz.tdkdictionary.feature_dictionary.presentation.home.HomeViewModel
 
 @Composable
@@ -28,6 +29,8 @@ fun HomeScreen(
                 Color.Red
             )
     ) {
+
+        Header()
 
         Column(
             modifier = Modifier
