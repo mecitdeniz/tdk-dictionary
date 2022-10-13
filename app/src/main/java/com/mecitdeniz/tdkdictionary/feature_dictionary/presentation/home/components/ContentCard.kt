@@ -35,19 +35,20 @@ fun ContentCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp, top = 16.dp),
-        shape = RoundedCornerShape(16.dp),
-        elevation = 8.dp,
-    ){
+            .padding(8.dp)
+            .clickable { },
+        elevation = 4.dp,
+        shape = RoundedCornerShape(16.dp)
+    ) {
         Column(
             modifier = Modifier.padding(8.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            mistakes.forEachIndexed{ index,mistake ->
+            mistakes.forEachIndexed { index, mistake ->
                 Row() {
                     Icon(
-                        modifier=Modifier.padding(4.dp),
+                        modifier = Modifier.padding(4.dp),
                         imageVector = Icons.Filled.Check,
                         contentDescription = null,
                         tint = Color.Green
@@ -56,7 +57,7 @@ fun ContentCard(
                     Text(
                         modifier = Modifier.padding(vertical = 8.dp),
                         text = mistake.correctWord,
-                        color = Color.Green,
+                        color = Color.Black,
                         style = MaterialTheme.typography.body1,
                         fontWeight = FontWeight.Bold
                     )
@@ -67,10 +68,10 @@ fun ContentCard(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        modifier=Modifier.padding(4.dp),
+                        modifier = Modifier.padding(4.dp),
                         imageVector = Icons.Filled.Close,
                         contentDescription = null,
-                        tint = Color.Green
+                        tint = Color.Red
                     )
 
                     Text(
@@ -99,9 +100,10 @@ fun ContentCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 16.dp, end = 16.dp, top = 16.dp),
-        shape = RoundedCornerShape(16.dp),
-        elevation = 8.dp,
+            .padding(8.dp)
+            .clickable { },
+        elevation = 4.dp,
+        shape = RoundedCornerShape(16.dp)
     ) {
 
         HorizontalPager(
@@ -162,7 +164,7 @@ fun ContentCard(
             .fillMaxWidth()
             .padding(8.dp)
             .clickable { },
-        elevation = 10.dp,
+        elevation = 4.dp,
         shape = RoundedCornerShape(16.dp)
     ) {
         Column(
@@ -185,7 +187,12 @@ fun ContentCard(
 
                 if (showIcon) {
                     Icon(
+                        modifier = Modifier
+                            .padding(2.dp)
+                            .width(20.dp)
+                            .height(20.dp),
                         imageVector = Icons.Filled.ArrowForward,
+                        tint = Color.Gray,
                         contentDescription = null
                     )
                 }
@@ -197,7 +204,10 @@ fun ContentCard(
                     modifier = Modifier
                         .fillMaxWidth()
                         .border(
-                            start = Border(strokeWidth = 3.dp, strokeColor = Color.LightGray)
+                            start = Border(
+                                strokeWidth = 3.dp,
+                                strokeColor = MaterialTheme.colors.background
+                            )
                         )
                 ) {
                     Text(

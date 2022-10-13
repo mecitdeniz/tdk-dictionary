@@ -17,7 +17,7 @@ fun ContentItem(
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp)
+            .padding(8.dp),
     ) {
         ContentHeader(title = headerTitle)
         ContentCard(
